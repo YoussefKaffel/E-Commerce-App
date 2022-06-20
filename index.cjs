@@ -13,7 +13,9 @@ app.use(bodyParser.json())
 
 const users = require("./Routes/user.cjs")
 const auth = require("./Routes/auth.cjs")
-const produit = require("./Routes/produit.cjs")
+const product = require("./Routes/produit.cjs")
+const cart = require("./Routes/cart.cjs")
+const order = require("./Routes/order.cjs")
 
 
 
@@ -23,7 +25,10 @@ mongoose.connect(process.env.DB_CONNECTION)
 
 app.use('/users',users)
 app.use('/auth',auth)
-app.use('/produit',produit)
+app.use('/product',product)
+app.use('/cart',cart)
+app.use('/order',order)
+
 
 
 app.listen(3001,()=>console.log("Listening on port 3001 .."))

@@ -16,3 +16,13 @@ const ValidateCart = (cart) => {
     }
 
     return Joi.validate(cart, schema);}
+const ValidateCartUpdate = (cart) => {
+    const schema = {
+        userId: Joi.string(),
+        products: Joi.array(),
+    }
+    return Joi.validate(cart, schema);}
+
+exports.Cart = Cart;
+exports.ValidateCart = ValidateCart;
+exports.ValidateCartUpdate = ValidateCartUpdate;
